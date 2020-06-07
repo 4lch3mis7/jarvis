@@ -1,4 +1,5 @@
 from gtts import gTTS
+from playsound import playsound
 import os
 import datetime
 import time
@@ -6,14 +7,14 @@ from json_obj import JsonObject
 
 # CONFIGURATIONS
 my_alarm_sound = 'This is the alarm time!'
-my_audio_player = 'mpg123'
 my_json_file = 'alarm_time.json'
 
 
 def spell(text):
     audio = gTTS(text=text, lang='en')
-    audio.save('audio.mp3')
-    os.system(f'{my_audio_player} audio.mp3')
+    audio.save('temp_audio.mp3')
+    playsound('temp_audio.mp3')
+    os.remove('temp_audio.mp3')
 
 
 def buzz():

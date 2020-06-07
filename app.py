@@ -1,21 +1,11 @@
-from gtts import gTTS
-from speech_recognition import Microphone, Recognizer, UnknownValueError
-import os
+from applications.command_and_keywords import CommandAndKeywords
+from applications.spell import spell
 
-# Basic Configurations
-audio_player = 'mpg123'
+spell('I am ready for the command!')
 
+com1 = CommandAndKeywords()
+com1.show_all_commands()
 
-def spell(text):
-    audio = gTTS(text=text, lang='en')
-    audio.save('audio.mp3')
-    os.system(f'{audio_player} audio.mp3')
+com1.execute_os_command(voice=True)
 
-
-def listen():
-    pass
-
-spell('hello!')
-
-
-
+    
