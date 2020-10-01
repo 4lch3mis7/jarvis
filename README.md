@@ -2,7 +2,7 @@
 
 Jarvis is an AI based application which help us to interact with machines.
 
-## Installation
+## Modules Required
 You should have the given module listed below
 ```bash
   
